@@ -1,12 +1,16 @@
 package banco;
 
+import java.io.Serializable;
+
 /**
  * Classe que abstrai uma Conta Bancária
  * @author Ingryd
  * @version 1.0
  */
 
-public class Conta {
+public class Conta implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
 	
 	/**
 	 * Número da Conta

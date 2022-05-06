@@ -1,18 +1,41 @@
 package banco;
 
-public class ContaCorrente {
-	
+public class ContaCorrente extends Conta {
 	/**
-	 * Realiza um depósito na conta corrente
-	 * @param agencia O número da agência
-	 * @param numero O número da conta
-	 * @param valor O valor que será depositado
-	 * @return O número do protocolo de confirmação
+	 * 
 	 */
+	private static final long serialVersionUID = 7317312244813855559L;
+	private String tipo;
+	private double chequeEspecial;
 	
-	public int depositar(int agencia, long numero, double valor) {
-		//implementação do método
-		return 0;
+	public ContaCorrente(String tipo) {
+		this.tipo = tipo;
+	}
+	
+	public String getTipo() {
+		return tipo;
+	}
+	
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+	
+	public double getChequeEspecial() {
+		return chequeEspecial;
+	}
+	
+	public void setChequeEspecial(double chequeEspecial) {
+		this.chequeEspecial = chequeEspecial;
+	}
+	
+	public double getSaldoDisponivel() {
+		return getSaldo() + this.chequeEspecial;
+	}
+	
+	@Override
+	public void retirar(double valor) {
+		valor += 10;
+		super.retirar(valor);
 	}
 
 }
