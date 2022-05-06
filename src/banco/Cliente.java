@@ -8,4 +8,9 @@ public class Cliente {
 	public void setEspecial(boolean especial) {
 		this.especial = especial;
 	}
+    public void setNome(String string) {
+    }
+	public char[] getNome() {
+		return null;
+	}
 }
